@@ -17,14 +17,11 @@ recipe: any = {};
 getRecipe() {
   this.recipeService.onGetRecipe(this.id).subscribe(
     response => {
-      console.log(response);
+      this.recipe = response;
     }
   )
 }
-  
-  
-  
   ngOnInit(): void {
-    
+    this.getRecipe();
   }
 }

@@ -1,1 +1,6 @@
-<p>recipe works!</p>
+<div id="recipe" *ngIf="recipe?.length > 0">
+    <p>{{recipe[0].description}}</p>
+<p>{{recipe[0].ingredients}}</p>
+<p>{{recipe[0].steps}}</p>
+<p>{{recipe[0].date | date}}</p>
+</div>
