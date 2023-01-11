@@ -10,14 +10,14 @@ import { RecipeService } from '../services/recipe.service';
 })
 export class RecipesComponent implements OnInit {
 
-  recipe: Recipe[] = [];
+  recipes: Recipe[] = [];
 
   constructor(private recipeService: RecipeService) {}
 
   getAllRecipes() {
     this.recipeService.onGetAllRecipes().subscribe(
-      res => {
-        this.recipe = res;
+      response => {
+        this.recipes = response;
       }
     )
   }
