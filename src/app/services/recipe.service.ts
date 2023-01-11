@@ -12,7 +12,7 @@ export class RecipeService {
 
   apiUrl = 'https://localhost:7299/api/';
 
-  getAllRecipes(): Observable<Recipe[]> {
+  onGetAllRecipes(): Observable<Recipe[]> {
     return this.http.get<Recipe[]>(this.apiUrl);
   }
 }
