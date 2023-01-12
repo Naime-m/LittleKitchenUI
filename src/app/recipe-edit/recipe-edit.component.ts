@@ -11,12 +11,26 @@ export class RecipeEditComponent implements OnInit {
 
 constructor(private recipeService: RecipeService, private actRoute: ActivatedRoute, private router: Router){}
 
+recipe: any = {};
+id = this.actRoute.snapshot.params['id'];
 
 editRecipe() {
+this.recipeService.onPutRecipe(this.recipe).subscribe(
+  response => {
+    console.log(response);
+  }
+)
+}
 
+getRecipe() {
+  this.recipeService.onGetRecipe(this.id).subscribe(
+    response => {
+      this.recipe = response;
+    }
+  )
 }
 
 ngOnInit(): void {
-  
+  this.getRecipe()
 }
 }
