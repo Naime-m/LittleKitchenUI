@@ -23,4 +23,8 @@ export class RecipeService {
   onPutRecipe(recipe: Recipe) : Observable<Recipe> {
     return this.http.put<Recipe>(this.apiUrl + '?id=' + recipe.id, recipe);
   }
+
+  onPostRecipe(recipe: Recipe) : Observable<Recipe> {
+    return this.http.post<Recipe>(this.apiUrl, recipe);
+  }
 }

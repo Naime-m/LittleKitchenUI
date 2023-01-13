@@ -1,4 +1,7 @@
+import { HttpClient } from '@angular/common/http';
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
+import { RecipeService } from '../services/recipe.service';
 
 @Component({
   selector: 'app-recipe-create',
@@ -7,4 +10,14 @@ import { Component } from '@angular/core';
 })
 export class RecipeCreateComponent {
 
+  recipe: any = {};
+constructor( private recipeService: RecipeService, private router: Router, ) {}
+
+  createRecipe() {
+    this.recipeService.onPostRecipe(this.recipe).subscribe(
+      response => {
+        this.router.navigate(['/recipes']);
+      }
+    )
+  }
 }
