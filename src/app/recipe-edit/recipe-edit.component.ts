@@ -20,7 +20,7 @@ export class RecipeEditComponent implements OnInit {
 
 
 editRecipe() {
-  this.recipeService.onPutRecipe(this.recipe).subscribe(
+  this.recipeService.onPutRecipe(this.recipe[0]).subscribe(
     response => {
       this.router.navigate(['/recipes']);
     }
@@ -30,7 +30,8 @@ editRecipe() {
   getRecipe() {
     this.recipeService.onGetRecipe(this.id).subscribe(
       response => {
-        this.recipe = response;    }
+        this.recipe = response;
+        console.log(response);    }
         )
       }
       
