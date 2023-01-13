@@ -1,32 +1,35 @@
-<div>
+<div *ngIf="recipe[0]">
     <form>
-        <div>
-            <input type="text" name="recipeTitle" [(ngModel)]="recipe.title" placeholder="title">
+        
+        <div class="form-group">            
+            <input type="hidden" name="id" class="form-control" [(ngModel)]="recipe[0].id" >
+            <input type="text" name="title" class="form-control" [(ngModel)]="recipe[0].title" placeholder="title">
         </div>
-        <div>
-            <input type="text" name="recipeTitle" [(ngModel)]="recipe.title" placeholder="title">
+        <div class="form-group">
+            <input type="text" name="description" class="form-control" [(ngModel)]="recipe[0].description" placeholder="description">
         </div>
-        <div>
-            <input type="text" name="recipeTitle" [(ngModel)]="recipe.title" placeholder="title">
+        <div class="form-group">
+            <input type="text" name="ingredients" class="form-control"[(ngModel)]="recipe[0].ingredients" placeholder="ingredients">
         </div>
-        <div>
-            <input type="text" name="recipeTitle" [(ngModel)]="recipe.title" placeholder="title">
+        <div class="form-group"> 
+            <input type="text" name="steps" class="form-control" [(ngModel)]="recipe[0].steps" placeholder="steps">
         </div>
-        <div>
-            <input type="text" name="recipeTitle" [(ngModel)]="recipe.title" placeholder="title">
-        </div>
-        <div>
-            <select name="courseType" ngModel>
+        <div class="form-group">
+            <select class="form-control" name="courseType" ngModel>
+                <option value="" disabled>Choose a course type</option>
+                <option *ngFor="let courseType of courseTypes | keyvalue" [ngValue]="courseType">
+                    {{courseType.key}}</option>
             </select>
         </div>
+        <div class="form-group">
+            <select class="form-control" name="category" ngModel>
+                <option value="" disabled>Choose a category</option>
+                <option *ngFor="let category of categories | keyvalue" [ngValue]="category">
+                    {{category.key}}</option>
+            </select>
+        </div>
+        <button type="submit" (click)="editRecipe()">Edit</button>
     </form>
 </div>
 
-title: string;
-description: string;
-ingredients: string;
-steps: string;
-date: Date;
-CourseType: CourseType;
-Category: Category;
-*/
+<a routerLink="/recipes">Back to home</a>

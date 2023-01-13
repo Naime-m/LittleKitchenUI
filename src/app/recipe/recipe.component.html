@@ -1,8 +1,10 @@
 <div id="recipe" *ngIf="recipe?.length > 0">
-    <p>{{recipe[0].description}}</p>
+<p>{{recipe[0].title}}</p>
+<p>{{recipe[0].description}}</p>
 <p>{{recipe[0].ingredients}}</p>
 <p>{{recipe[0].steps}}</p>
 <p>{{recipe[0].date | date}}</p>
+<p>{{recipe[0].courseType}}</p>
 <p>{{recipe[0].category}}</p>
 <a class="edit" routerLink="/recipe/edit/{{recipe[0].id}}">Edit</a>
 </div>
