@@ -1,4 +1,6 @@
 <div *ngFor="let recipe of recipes">
  <p>{{recipe.title}}</p>
  <a class="viewRecipe" routerLink="/recipe/{{recipe.id}}">Details</a>
+ <button><a class="createRecipe" routerLink="/create/">New</a>
+</button>
 </div>

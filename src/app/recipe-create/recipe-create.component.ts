@@ -1,6 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
+import { Category, CourseType } from '../models/recipe';
 import { RecipeService } from '../services/recipe.service';
 
 @Component({
@@ -11,6 +12,9 @@ import { RecipeService } from '../services/recipe.service';
 export class RecipeCreateComponent {
 
   recipe: any = {};
+  courseTypes: any = CourseType;
+  categories: any = Category;
+  keys = Object.keys;
 constructor( private recipeService: RecipeService, private router: Router, ) {}
 
   createRecipe() {

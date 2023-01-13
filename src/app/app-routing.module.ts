@@ -8,7 +8,7 @@ import { RecipesComponent } from './recipes/recipes.component';
 const routes: Routes = [
   {path:'' ,pathMatch: 'full', redirectTo:'recipes'},
   {path:'recipes', component: RecipesComponent},
-  {path:'new', component: RecipeCreateComponent},
+  {path:'create', component: RecipeCreateComponent},
   {path:'recipe/:id', component:RecipeComponent},
   {path:'recipe/edit/:id', component:RecipeEditComponent}
 ];
