@@ -9,16 +9,16 @@ export interface Recipe {
     Category: Category;
 }
 export enum CourseType {
-    Appetizer,
-    MainCourse,
-    Dessert,
-    Beverage
+    Appetizer = 'Appetizer',
+    MainCourse = 'Main Course',
+    Dessert = 'Dessert',
+    Beverage = 'Beverage'
 }
 
 export enum Category {
-    Vegan,
-    Meat,
-    Fish,
-    GlutenFree
+    Vegan = 'Vegan',
+    Meat = 'Meat',
+    Fish = 'Fish',
+    GlutenFree = 'Gluten Free'
 
 }

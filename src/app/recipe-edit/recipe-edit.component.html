@@ -1,34 +1,28 @@
-<div *ngIf="recipe">
-    <form>
-        <div class="form-group">            
-            <input type="hidden" name="id" class="form-control" [(ngModel)]="recipe.id" >
+<form>
+    <div *ngIf="recipe!">
+        <div class="form-group">
+            <input type="hidden" name="id" class="form-control" [(ngModel)]="recipe.id">
             <input type="text" name="title" class="form-control" [(ngModel)]="recipe.title" placeholder="title">
         </div>
         <div class="form-group">
             <input type="text" name="description" class="form-control" [(ngModel)]="recipe.description" placeholder="description">
         </div>
         <div class="form-group">
-            <input type="text" name="ingredients" class="form-control"[(ngModel)]="recipe.ingredients" placeholder="ingredients">
+            <input type="text" name="ingredients" class="form-control" [(ngModel)]="recipe.ingredients" placeholder="ingredients">
         </div>
-        <div class="form-group"> 
+        <div class="form-group">
             <input type="text" name="steps" class="form-control" [(ngModel)]="recipe.steps" placeholder="steps">
         </div>
         <div class="form-group">
-            <select class="form-control" name="courseType" ngModel>
-                <option value="" disabled>Choose a course type</option>
-                <option *ngFor="let courseType of courseTypes | keyvalue" [ngValue]="courseType">
-                    {{courseType.key}}</option>
+            <select name="courseType">
+                <option *ngFor="let type of recipe.courseType | keyvalue" [ngValue]="type.value">
+                    {{type.value}}
+                </option>
             </select>
-        </div>
-        <div class="form-group">
-            <select class="form-control" name="category" ngModel>
-                <option value="" disabled>Choose a category</option>
-                <option *ngFor="let category of categories | keyvalue" [ngValue]="category">
-                    {{category.key}}</option>
-            </select>
+            <p>{{recipe.courseType}}</p>
         </div>
         <button type="submit" (click)="editRecipe()">Edit</button>
-    </form>
-</div>
+    </div>
+</form>
 
 <a routerLink="/recipes">Back to home</a>

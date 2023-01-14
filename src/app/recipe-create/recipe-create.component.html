@@ -14,16 +14,13 @@
     <div class="form-group">
         <select class="form-control" name="courseType" ngModel>
             <option value="" disabled>Choose a course type</option>
-            <option *ngFor="let courseType of courseTypes | keyvalue" [ngValue]="courseType">
-                {{courseType.key}}</option>
+
+
+            <option *ngFor="let courseType of recipe.courseType| keyvalue" [ngValue]="courseType">
+                {{courseType}}</option>
         </select>
-    </div>
-    <div class="form-group">
-        <select class="form-control" name="category" ngModel>
-            <option value="" disabled>Choose a category</option>
-            <option *ngFor="let category of categories | keyvalue" [ngValue]="category">
-                {{category.key}}</option>
-        </select>
+
+        
     </div>
     <button type="submit" (click)="createRecipe()">Create</button>
 </form>

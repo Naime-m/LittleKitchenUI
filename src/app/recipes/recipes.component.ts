@@ -12,13 +12,12 @@ export class RecipesComponent implements OnInit {
 
   recipes: Recipe[] = [];
 
-  constructor(private recipeService: RecipeService) {}
+  constructor(private recipeService: RecipeService) { }
 
   getAllRecipes() {
     this.recipeService.onGetAllRecipes().subscribe(
       response => {
         this.recipes = response;
-        console.log(response);
       }
     )
   }

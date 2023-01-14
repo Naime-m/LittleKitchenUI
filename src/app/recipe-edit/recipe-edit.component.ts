@@ -9,33 +9,30 @@ import { RecipeService } from '../services/recipe.service';
   styleUrls: ['./recipe-edit.component.css']
 })
 export class RecipeEditComponent implements OnInit {
-  
-  constructor(private recipeService: RecipeService, private actRoute: ActivatedRoute, private router: Router){}
-  
+
+  constructor(private recipeService: RecipeService, private actRoute: ActivatedRoute, private router: Router) { }
+
   recipe: any = {};
-  courseTypes: any = CourseType;
-  categories: any = Category;
-  keys = Object.keys;
   id = this.actRoute.snapshot.params['id'];
 
 
-editRecipe() {
-  this.recipeService.onPutRecipe(this.recipe[0]).subscribe(
-    response => {
-      this.router.navigate(['/recipes']);
-    }
+  editRecipe() {
+    this.recipeService.onPutRecipe(this.recipe).subscribe(
+      response => {
+        this.router.navigate(['/recipes']);
+      }
     )
   }
-  
+
   getRecipe() {
     this.recipeService.onGetRecipe(this.id).subscribe(
       response => {
         this.recipe = response;
-        console.log(response);    }
-        )
       }
-      
-      ngOnInit(): void {
-        this.getRecipe()
-      }
-    }
+    )
+  }
+
+  ngOnInit(): void {
+    this.getRecipe()
+  }
+}
