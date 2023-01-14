@@ -18,6 +18,7 @@ getRecipe() {
   this.recipeService.onGetRecipe(this.id).subscribe(
     response => {
       this.recipe = response;
+      console.log(response);
     }
   )
 }

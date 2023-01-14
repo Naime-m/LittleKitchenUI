@@ -20,7 +20,8 @@ constructor( private recipeService: RecipeService, private router: Router, ) {}
   createRecipe() {
     this.recipeService.onPostRecipe(this.recipe).subscribe(
       response => {
-        this.router.navigate(['/recipes']);
+       // this.router.navigate(['/recipes']);
+        console.log(response);
       }
     )
   }

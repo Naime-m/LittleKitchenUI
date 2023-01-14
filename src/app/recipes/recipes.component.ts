@@ -18,6 +18,7 @@ export class RecipesComponent implements OnInit {
     this.recipeService.onGetAllRecipes().subscribe(
       response => {
         this.recipes = response;
+        console.log(response);
       }
     )
   }

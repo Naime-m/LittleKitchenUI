@@ -10,14 +10,14 @@ export class RecipeService {
 
   constructor(private http: HttpClient) { }
 
-  apiUrl = 'https://localhost:7299/api/recipe';
+  apiUrl = 'https://localhost:7299/api/recipe/';
 
   onGetAllRecipes(): Observable<Recipe[]> {
     return this.http.get<Recipe[]>(this.apiUrl);
   }
 
   onGetRecipe(id: any) : Observable<Recipe> {
-    return this.http.get<Recipe>(this.apiUrl + '?id=' + id);
+    return this.http.get<Recipe>(this.apiUrl + id);
   }
 
   onPutRecipe(recipe: Recipe) : Observable<Recipe> {
