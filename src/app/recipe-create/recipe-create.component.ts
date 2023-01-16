@@ -12,16 +12,20 @@ import { RecipeService } from '../services/recipe.service';
 export class RecipeCreateComponent {
 
   recipe: any = {};
-  courseTypes: any = CourseType;
+  order = (a: any, b:any) => { return a;}  
+courseTypes: any = CourseType;
   categories: any = Category;
-constructor( private recipeService: RecipeService, private router: Router, ) {}
+  Object = Object;
+
+
+  constructor(private recipeService: RecipeService, private router: Router,) { }
 
   createRecipe() {
     this.recipeService.onPostRecipe(this.recipe).subscribe(
       response => {
-     this.router.navigate(['/recipes']);
-     console.log(response);
-            }
+        console.log(response);
+        //this.router.navigate(['/recipes']);
+      }
     )
   }
 }

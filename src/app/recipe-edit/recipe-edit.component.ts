@@ -13,17 +13,16 @@ export class RecipeEditComponent implements OnInit {
   constructor(private recipeService: RecipeService, private actRoute: ActivatedRoute, private router: Router) { }
 
   recipe: any = {};
-  
-  courseTypes = CourseType;
 
+  courseTypes: any = CourseType;
+  categories: any = Category;
   id = this.actRoute.snapshot.params['id'];
 
 
   editRecipe() {
     this.recipeService.onPutRecipe(this.recipe).subscribe(
       response => {
-        //this.router.navigate(['/recipes']);
-        console.log(response);
+        this.router.navigate(['/recipes']);
       }
     )
   }
