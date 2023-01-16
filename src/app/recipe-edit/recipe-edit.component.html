@@ -14,9 +14,9 @@
             <input type="text" name="steps" class="form-control" [(ngModel)]="recipe.steps" placeholder="steps">
         </div>
         <div class="form-group">
-            <select name="courseType">
-                <option *ngFor="let type of recipe.courseType | keyvalue" [ngValue]="type.value">
-                    {{type.value}}
+            <select name="courseType"[(ngModel)]="recipe.courseType">
+                <option *ngFor="let course of courseTypes | keyvalue" [ngValue]="course.value">
+                    {{course.value}}
                 </option>
             </select>
             <p>{{recipe.courseType}}</p>

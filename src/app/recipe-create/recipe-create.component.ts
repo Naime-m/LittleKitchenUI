@@ -12,12 +12,15 @@ import { RecipeService } from '../services/recipe.service';
 export class RecipeCreateComponent {
 
   recipe: any = {};
+  courseTypes: any = CourseType;
+  categories: any = Category;
 constructor( private recipeService: RecipeService, private router: Router, ) {}
 
   createRecipe() {
     this.recipeService.onPostRecipe(this.recipe).subscribe(
       response => {
-      this.router.navigate(['/recipes']);
+     this.router.navigate(['/recipes']);
+     console.log(response);
             }
     )
   }

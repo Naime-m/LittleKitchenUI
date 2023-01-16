@@ -1,7 +1,7 @@
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpParams } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
-import { Recipe } from '../models/recipe';
+import { Category, CourseType, Recipe } from '../models/recipe';
 
 @Injectable({
   providedIn: 'root'

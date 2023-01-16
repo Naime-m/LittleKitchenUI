@@ -1,5 +1,5 @@
-<form>
-    <div class="form-group">
+    <form>
+        <div class="form-group">
         <input type="text" name="title" class="form-control" [(ngModel)]="recipe.title" placeholder="title">
     </div>
     <div class="form-group">
@@ -12,18 +12,21 @@
         <input type="text" name="steps" class="form-control" [(ngModel)]="recipe.steps" placeholder="steps">
     </div>
     <div class="form-group">
-        <select class="form-control" name="courseType" ngModel>
-            <option value="" disabled>Choose a course type</option>
-
-
-            <option *ngFor="let courseType of recipe.courseType| keyvalue" [ngValue]="courseType">
-                {{courseType}}</option>
+        <select name="courseType"[(ngModel)]="recipe.category">
+            <option *ngFor="let category of categories | keyvalue" [ngValue]="category.value">
+                {{category.value}}
+            </option>
         </select>
-
-        
-    </div>
-    <button type="submit" (click)="createRecipe()">Create</button>
-</form>
-
-
-<a routerLink="/recipes">Back to home</a>
+        </div>
+        <div class="form-group">
+            <select name="courseType"[(ngModel)]="recipe.courseType">
+                <option *ngFor="let course of courseTypes | keyvalue" [ngValue]="course.value">
+                    {{course.value}}
+                </option>
+            </select>
+            </div>
+        <button type="submit" (click)="createRecipe()">Create</button>
+    </form>
+    
+    
+    <a routerLink="/recipes">Back to home</a>
