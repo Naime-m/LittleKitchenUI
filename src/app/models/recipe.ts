@@ -22,6 +22,18 @@ export enum Category {
     Meat,
     Fish,
     'Gluten Free' = GlutenFree
-
 }
+
+
+export let courseTypesDisplay: { [index: number]: string } = {};
+courseTypesDisplay[CourseType.MainCourse] = "Main Course";
+courseTypesDisplay[CourseType.Appetizer] = "Appetizer";
+courseTypesDisplay[CourseType.Dessert] = "Dessert";
+courseTypesDisplay[CourseType.Beverage] = "Beverage";
+
+export let categoryTypesDisplay: { [index: number]: string } = {};
+categoryTypesDisplay[Category.GlutenFree] = "Gluten Free";
+categoryTypesDisplay[Category.Vegan] = "Vegan";
+categoryTypesDisplay[Category.Meat] = "Meat";
+categoryTypesDisplay[Category.Fish] = "Fish";
 
