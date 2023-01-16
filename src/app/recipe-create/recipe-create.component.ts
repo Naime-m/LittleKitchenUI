@@ -12,10 +12,9 @@ import { RecipeService } from '../services/recipe.service';
 export class RecipeCreateComponent {
 
   recipe: any = {};
-  order = (a: any, b:any) => { return a;}  
-courseTypes: any = CourseType;
+  order = (a: any, b: any) => { return a; }
+  courseTypes: any = CourseType;
   categories: any = Category;
-  Object = Object;
 
 
   constructor(private recipeService: RecipeService, private router: Router,) { }

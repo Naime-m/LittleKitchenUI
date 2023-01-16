@@ -13,7 +13,7 @@ export class RecipeEditComponent implements OnInit {
   constructor(private recipeService: RecipeService, private actRoute: ActivatedRoute, private router: Router) { }
 
   recipe: any = {};
-
+  order = (a: any, b: any) => { return a; }
   courseTypes: any = CourseType;
   categories: any = Category;
   id = this.actRoute.snapshot.params['id'];
