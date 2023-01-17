@@ -1,4 +1,26 @@
-# LittleKitchen
+# LitteKitchenUI 
+
+Made using Angular
+
+## Description
+
+Add any garment that you want, edit it or delete it.
+
+## Getting Started
+
+You have a few choices when entering a recipe in the API :
+- The title 
+- The description
+- The ingredients
+- The steps
+- The image url
+- The category
+- The course type 
+
+### Installing
+
+Copy the project and launch it on your machine by following the instructions down below.
+You'll also need to have the LittleKitchenAPI on your machine <https://github.com/Naime-m/LittleKitchenAPI>
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 15.0.4.
 
@@ -25,3 +47,13 @@ Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To u
 ## Further help
 
 To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+
+## Author
+ 
+ MEDJEK Naime
+
+## Version History
+
+* 0.1
+    * Initial Release
+
