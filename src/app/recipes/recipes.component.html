@@ -1,9 +1,6 @@
-<div *ngIf="recipes">
-
+<div *ngIf="recipes" class="d-flex flex-column m-3">
     <div *ngFor="let recipe of recipes">
         <p>{{recipe.title}}</p>
-        <a class="viewRecipe" routerLink="/recipe/{{recipe.id}}">Details</a>
+        <button class="bg-danger bg-opacity-75 border border-0 text-white" routerLink="/recipe/{{recipe.id}}">Details</button>
     </div>
-    
-    <button class="createRecipe" routerLink="/create/">New</button>
 </div>
