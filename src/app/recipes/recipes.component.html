@@ -1,6 +1,11 @@
-<div *ngIf="recipes" class="d-flex flex-column m-3">
-    <div *ngFor="let recipe of recipes">
-        <p>{{recipe.title}}</p>
-        <button class="bg-danger bg-opacity-75 border border-0 text-white" routerLink="/recipe/{{recipe.id}}">Details</button>
+    <div *ngFor="let recipe of recipes" class="card d-flex flex-row m-5 border" style="width: 500px">
+        <img src="{{recipe.imageUrl}}" class="img-fluid" alt="recipe image">
+        <div class="d-flex flex-column m-5">
+            <h5 class="card-title">{{recipe.title}}</h5>
+            <p class="card-text">{{recipe.description}}</p>
+            <p class="card-text"><small class="text-muted">{{recipe.date | date}}</small></p>
+            <a routerLink="/recipe/{{recipe.id}}" class="btn btn-danger btn-opacity-75">See recipe</a>
+        </div>
     </div>
-</div>
+
+
