@@ -1,0 +1,12 @@
+    <div *ngFor="let recipe of recipes" class="card d-flex flex-row m-5 border">
+        <img src="{{recipe.imageUrl}}" onerror="this.src='https://images.unsplash.com/photo-1565958011703-44f9829ba187?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=465&q=80'"
+         class="img-fluid" alt="recipe image" style="width: 40%">
+        <div class="d-flex flex-column m-5">
+            <h5 class="card-title text-break">{{recipe.title}}</h5>
+            <p class="card-text">{{recipe.description}}</p>
+            <p class="card-text"><small class="text-muted">{{recipe.date | date}}</small></p>
+            <a routerLink="/recipe/{{recipe.id}}" class="btn btn-danger btn-opacity-75">See recipe</a>
+        </div>
+    </div>
+
+
