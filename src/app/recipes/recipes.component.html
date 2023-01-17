@@ -2,7 +2,6 @@
 
     <div *ngFor="let recipe of recipes">
         <p>{{recipe.title}}</p>
-        <span>{{recipe.id}}</span>
         <a class="viewRecipe" routerLink="/recipe/{{recipe.id}}">Details</a>
     </div>
     
