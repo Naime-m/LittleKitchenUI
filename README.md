@@ -4,7 +4,7 @@ Made using Angular
 
 ## Description
 
-Add any garment that you want, edit it or delete it.
+An online personal recipes book. Add any recipe that you want, edit it or delete it.
 
 ## Getting Started
 
