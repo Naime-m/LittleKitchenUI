@@ -1,21 +1,33 @@
-<form>
+<form class="m-5 border border-1 p-4 bg-danger bg-opacity-75">
     <div class="form-group">
-        <input type="text" name="title" class="form-control" [(ngModel)]="recipe.title" placeholder="Title (at least 5 characters, 300 max)">
+        <label class="form-label text-white">Title</label>
+        <input type="text" name="title" class="form-control" [(ngModel)]="recipe.title" placeholder="Title">
+        <div class="form-text mb-3 text-white">
+          Your title must be 5-300 characters long
+        </div>
     </div>
     <div class="form-group">
-        <input type="text" name="description" class="form-control" [(ngModel)]="recipe.description" placeholder="Description (at least 10 characters, 500 max)">
+        <label class="form-label text-white">Description</label>
+        <textarea type="text" name="description" class="form-control" [(ngModel)]="recipe.description" placeholder="Description"></textarea>
+        <div class="form-text mb-3 text-white">
+            Your description must be 10-500 characters long
+          </div>
     </div>
     <div class="form-group">
-        <input type="text" name="ingredients" class="form-control" [(ngModel)]="recipe.ingredients" placeholder="Ingredients">
+        <label class="form-label text-white">Ingredients</label>
+        <textarea type="text" name="ingredients" class="form-control mb-3" [(ngModel)]="recipe.ingredients" placeholder="Ingredients"></textarea>
     </div>
     <div class="form-group">
-        <input type="text" name="steps" class="form-control" [(ngModel)]="recipe.steps" placeholder="Recipe steps">
+        <label class="form-label text-white">Steps</label>
+        <textarea type="text" name="steps" class="form-control mb-3" [(ngModel)]="recipe.steps" placeholder="Steps"></textarea>
     </div>
     <div class="form-group">
-        <span>Image url:</span><input type="text" name="steps" class="form-control" [(ngModel)]="recipe.imageUrl" placeholder="Image url">
+        <label class="form-label text-white">Your image url :</label>
+        <input type="text" name="steps" class="form-control mb-3" [(ngModel)]="recipe.imageUrl" placeholder="Image url">
     </div>
     <div class="form-group">
-        <select name="courseType" [(ngModel)]="recipe.category">
+        <label class="form-label text-white">Category</label>
+        <select name="category" class="form-select" [(ngModel)]="recipe.category">
             <option value="" disabled selected>Select your option</option>
             <option [ngValue]="null" >None</option>
             <option *ngFor="let category of categories | keyvalue:order | slice: 5" [ngValue]="category.value">
@@ -24,7 +36,8 @@
         </select>
     </div>
     <div>
-        <select name="courseType" [(ngModel)]="recipe.courseType">
+        <label class="form-label text-white">Course type</label>
+        <select name="courseType" class="form-select"  [(ngModel)]="recipe.courseType">
             <option value="" disabled selected>Select your option</option>
             <option [ngValue]="null" >None</option>
             <option *ngFor="let course of courseTypes | keyvalue:order | slice: 5" [ngValue]="course.value">
@@ -32,8 +45,5 @@
             </option>
         </select>
     </div>
-    <button type="submit" (click)="createRecipe()">Create</button>
+    <button class="btn btn-danger mt-3" type="submit" (click)="createRecipe()">Create</button>
 </form>
-
-
-<a routerLink="/recipes">Back to home</a> 
