@@ -22,8 +22,7 @@ export class RecipeCreateComponent {
   createRecipe() {
     this.recipeService.onPostRecipe(this.recipe).subscribe(
       response => {
-        console.log(response);
-        //this.router.navigate(['/recipes']);
+        this.router.navigate(['/recipes']);
       }
     )
   }

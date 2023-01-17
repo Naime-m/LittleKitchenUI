@@ -8,4 +8,5 @@
     <p>{{categoryTypesDisplay[recipe.category]}}</p>
     <p>{{courseTypesDisplay[recipe.courseType]}}</p>
     <a class="edit" routerLink="/recipe/edit/{{recipe.id}}">Edit</a>
+    <button class="delete" (click)="deleteRecipe()">Delete</button>
 </div>
