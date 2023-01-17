@@ -5,6 +5,7 @@ export interface Recipe {
     ingredients: string;
     steps: string;
     date: Date;
+    imageUrl: string;
     CourseType: CourseType;
     Category: Category;
 }
